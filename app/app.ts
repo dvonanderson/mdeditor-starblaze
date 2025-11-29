@@ -6,6 +6,11 @@ import config from 'mdeditor-starblaze/config/environment';
 import { importSync, isDevelopingApp, macroCondition } from '@embroider/macros';
 import setupInspector from '@embroider/legacy-inspector-support/ember-source-4.12';
 
+// Import Bootstrap CSS and JavaScript
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
 if (macroCondition(isDevelopingApp())) {
   importSync('./deprecation-workflow');
 }
