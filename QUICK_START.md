@@ -2,6 +2,28 @@
 
 Get up and running with MDEditor Starblaze in minutes!
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+**Table of Contents**
+
+- [Installation](#installation)
+- [Development](#development)
+- [Making Commits](#making-commits)
+  - [Option 1: Interactive Commitizen (Recommended)](#option-1-interactive-commitizen-recommended)
+  - [Option 2: Manual Conventional Commits](#option-2-manual-conventional-commits)
+- [Commit Format](#commit-format)
+  - [Types](#types)
+  - [Examples](#examples)
+- [Common Commands](#common-commands)
+- [Project Structure](#project-structure)
+- [Git Hooks (Automatic)](#git-hooks-automatic)
+- [CI/CD (Automatic)](#cicd-automatic)
+- [Need Help?](#need-help)
+- [Tips](#tips)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Installation
 
 ```bash

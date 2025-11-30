@@ -1,6 +1,46 @@
 # MDEditor Starblaze ⚡
 
-A modern Markdown editor built with Ember.js, featuring Bootstrap 5 UI, .gjs template components, and a complete CI/CD pipeline.
+![](mdeditor.png)
+
+Web application for writing metadata. Built using [ember.js](http://emberjs.com/). Go to https://www.mdeditor.org/ to use the application.
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+**Table of Contents**
+
+- [Features](#features)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Running / Development](#running--development)
+- [Available Scripts](#available-scripts)
+  - [Development](#development)
+  - [Linting](#linting)
+  - [Building](#building)
+  - [Git Workflow](#git-workflow)
+  - [Documentation](#documentation)
+- [Project Structure](#project-structure)
+- [Key Technologies](#key-technologies)
+- [Git Workflow](#git-workflow-1)
+  - [Making Commits](#making-commits)
+  - [Commit Types](#commit-types)
+  - [Git Hooks](#git-hooks)
+- [CI/CD Pipeline](#cicd-pipeline)
+  - [Continuous Integration](#continuous-integration)
+  - [GitHub Pages Deployment](#github-pages-deployment)
+- [Documentation](#documentation-1)
+- [Code Generators](#code-generators)
+- [Testing](#testing)
+- [Deployment](#deployment)
+  - [GitHub Pages (Automatic)](#github-pages-automatic)
+  - [Manual Deployment](#manual-deployment)
+- [Contributing](#contributing)
+- [Browser Support](#browser-support)
+- [Further Reading](#further-reading)
+- [Browser Extensions](#browser-extensions)
+- [License](#license)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Features
 
@@ -77,6 +117,12 @@ npm run format            # Format code with Prettier
 
 ```bash
 npm run commit        # Interactive commit with Commitizen
+```
+
+### Documentation
+
+```bash
+npm run doc:toc       # Generate table of contents for README.md and QUICK_START.md
 ```
 
 ## Project Structure

@@ -6,6 +6,9 @@ import config from 'mdeditor-starblaze/config/environment';
 import { importSync, isDevelopingApp, macroCondition } from '@embroider/macros';
 import setupInspector from '@embroider/legacy-inspector-support/ember-source-4.12';
 
+// Install WarpDrive (Ember Data) with Ember's reactivity system
+import '@warp-drive/ember/install';
+
 // Import Bootstrap CSS and JavaScript
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
