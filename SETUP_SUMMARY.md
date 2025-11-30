@@ -13,9 +13,6 @@
 **Pre-commit Hook** (`.husky/pre-commit`)
 
 ```bash
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
-
 npx lint-staged
 ```
 
@@ -30,9 +27,6 @@ Runs on every commit to:
 **Commit-msg Hook** (`.husky/commit-msg`)
 
 ```bash
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
-
 npx --no -- commitlint --edit $1
 ```
 
