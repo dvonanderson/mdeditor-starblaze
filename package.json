@@ -12,6 +12,7 @@
   },
   "scripts": {
     "build": "vite build",
+    "build:gh-pages": "vite build --base=/mdeditor-starblaze/",
     "format": "prettier . --cache --write",
     "lint": "concurrently \"npm:lint:*(!fix)\" --names \"lint:\" --prefixColors auto",
     "lint:css": "stylelint \"**/*.css\"",
@@ -24,7 +25,9 @@
     "lint:js:fix": "eslint . --fix",
     "lint:types": "glint",
     "start": "vite",
-    "test": "vite build --mode development && ember test --path dist"
+    "test": "vite build --mode development && ember test --path dist",
+    "prepare": "husky",
+    "commit": "cz"
   },
   "exports": {
     "./tests/*": "./tests/*",
@@ -36,6 +39,8 @@
     "@babel/plugin-transform-runtime": "^7.28.3",
     "@babel/plugin-transform-typescript": "^7.28.0",
     "@babel/runtime": "^7.28.4",
+    "@commitlint/cli": "^20.1.0",
+    "@commitlint/config-conventional": "^20.0.0",
     "@ember-data/adapter": "~5.6.0",
     "@ember-data/graph": "~5.6.0",
     "@ember-data/json-api": "~5.6.0",
@@ -69,7 +74,9 @@
     "@warp-drive/core-types": "~5.6.0",
     "@warp-drive/ember": "~5.6.0",
     "babel-plugin-ember-template-compilation": "^2.4.1",
+    "commitizen": "^4.3.1",
     "concurrently": "^9.2.1",
+    "cz-conventional-changelog": "^3.3.0",
     "decorator-transforms": "^2.3.0",
     "ember-auto-import": "^2.11.1",
     "ember-cli": "~6.8.0",
@@ -89,6 +96,8 @@
     "eslint-plugin-n": "^17.23.1",
     "eslint-plugin-qunit": "^8.2.5",
     "globals": "^16.4.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
     "prettier": "^3.6.2",
     "prettier-plugin-ember-template-tag": "^2.1.0",
     "qunit": "^2.24.2",
@@ -108,6 +117,27 @@
     "edition": "octane"
   },
   "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,gjs,gts}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.css": [
+      "stylelint --fix",
+      "prettier --write"
+    ],
+    "*.hbs": [
+      "ember-template-lint --fix"
+    ],
+    "*.{json,md}": [
+      "prettier --write"
+    ]
+  },
   "dependencies": {
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.8",
