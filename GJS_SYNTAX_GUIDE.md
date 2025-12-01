@@ -98,7 +98,7 @@ import Counter from './counter.gjs';
     <h1>My Page</h1>
     <Counter />
   </div>
-</template>
+</template>;
 ```
 
 ### 6. Template-Only Components
@@ -127,6 +127,7 @@ For simple components without logic, you can export just the template:
 ### Counter Component (`app/components/counter.gjs`)
 
 Demonstrates:
+
 - `@tracked` reactive state
 - Multiple action handlers
 - Event handling with `{{on}}`
@@ -136,6 +137,7 @@ Demonstrates:
 ### Markdown Editor Component (`app/components/markdown-editor.gjs`)
 
 Demonstrates:
+
 - Form input handling
 - Two-way data binding patterns
 - Component state management
@@ -145,6 +147,7 @@ Demonstrates:
 ### Route Templates
 
 Template-only route components:
+
 - `app/templates/editor.gts` - Imports and renders MarkdownEditor
 - `app/templates/demo.gts` - Imports and renders Counter
 - `app/templates/application.gts` - Navigation with LinkTo component
@@ -152,6 +155,7 @@ Template-only route components:
 ## Build System
 
 This project uses **Embroider** with **Vite**, the modern build system for Ember that provides:
+
 - Fast HMR (Hot Module Replacement)
 - Optimized production builds
 - Modern JavaScript output

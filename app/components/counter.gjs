@@ -26,14 +26,25 @@ export default class CounterComponent extends Component {
       </div>
 
       <div class="counter-controls btn-group" role="group">
-        <button type="button" class="btn btn-light" {{on "click" this.decrement}}>
-          <i class="bi bi-dash-lg"></i> Decrement
+        <button
+          type="button"
+          class="btn btn-light"
+          {{on "click" this.decrement}}
+        >
+          <i class="bi bi-dash-lg"></i>
+          Decrement
         </button>
         <button type="button" class="btn btn-warning" {{on "click" this.reset}}>
-          <i class="bi bi-arrow-clockwise"></i> Reset
+          <i class="bi bi-arrow-clockwise"></i>
+          Reset
         </button>
-        <button type="button" class="btn btn-light" {{on "click" this.increment}}>
-          <i class="bi bi-plus-lg"></i> Increment
+        <button
+          type="button"
+          class="btn btn-light"
+          {{on "click" this.increment}}
+        >
+          <i class="bi bi-plus-lg"></i>
+          Increment
         </button>
       </div>
 
