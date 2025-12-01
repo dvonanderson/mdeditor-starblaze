@@ -1,0 +1,23 @@
+/* ========================================
+   TOP NAVBAR
+   ======================================== */
+
+.top-navbar {
+  height: var(--top-navbar-height);
+  flex-shrink: 0;
+  z-index: 900;
+}
+
+.top-navbar .nav-link {
+  color: #495057;
+  transition: all 0.2s ease;
+}
+
+.top-navbar .nav-link:hover {
+  color: #667eea;
+}
+
+.top-navbar .nav-link.active {
+  color: #667eea;
+  font-weight: 600;
+}

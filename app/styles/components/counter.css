@@ -7,14 +7,14 @@
   border-radius: 8px;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgb(0 0 0 / 10%);
 }
 
 .counter-component h3 {
   margin-top: 0;
   font-size: 1.5rem;
   text-align: center;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 2px 2px 4px rgb(0 0 0 / 30%);
 }
 
 .counter-display {
@@ -30,7 +30,7 @@
 .counter-display strong {
   font-size: 3rem;
   color: #f39c12;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 2px 2px 4px rgb(0 0 0 / 30%);
 }
 
 .counter-controls {
@@ -54,7 +54,7 @@
 
 .counter-controls button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgb(0 0 0 / 20%);
 }
 
 .counter-controls button:active {
@@ -64,11 +64,11 @@
 .counter-info {
   margin-top: 2rem;
   padding-top: 1.5rem;
-  border-top: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid rgb(255 255 255 / 30%);
 }
 
 .counter-info p {
-  margin: 0 0 1rem 0;
+  margin: 0 0 1rem;
   font-weight: bold;
 }
 

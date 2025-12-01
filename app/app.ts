@@ -14,6 +14,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
+// Import mdEditor custom font
+import './styles/mdeditor-font.css';
+
+// Import layout and component styles
+import './styles/layout.css';
+import './styles/components/sidebar-nav.css';
+import './styles/components/top-navbar.css';
+import './styles/components/breadcrumb-nav.css';
+
 if (macroCondition(isDevelopingApp())) {
   importSync('./deprecation-workflow');
 }

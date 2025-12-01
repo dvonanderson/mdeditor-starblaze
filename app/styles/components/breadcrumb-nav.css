@@ -1,0 +1,30 @@
+/* ========================================
+   BREADCRUMB NAVIGATION
+   ======================================== */
+
+.breadcrumb-nav {
+  height: var(--breadcrumb-height);
+  flex-shrink: 0;
+}
+
+.breadcrumb-nav .breadcrumb-item + .breadcrumb-item::before {
+  content: '›';
+  font-size: 1.2rem;
+  color: #6c757d;
+}
+
+.breadcrumb-nav .breadcrumb-item a {
+  color: #667eea;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.breadcrumb-nav .breadcrumb-item a:hover {
+  color: #764ba2;
+  text-decoration: underline;
+}
+
+.breadcrumb-nav .breadcrumb-item.active {
+  color: #495057;
+  font-weight: 500;
+}

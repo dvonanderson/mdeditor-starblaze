@@ -1,28 +1,30 @@
-/* Ember supports plain CSS out of the box. More info: https://cli.emberjs.com/release/advanced-use/stylesheets/ */
-
 /* ========================================
-   CUSTOM STYLES (Bootstrap-enhanced)
+   GLOBAL STYLES & THEME VARIABLES
    ======================================== */
 
-/* Custom theme overrides and additions */
+/* Custom CSS variables for theming */
 :root {
   --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   --editor-gradient: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  --sidebar-width: 260px;
+  --top-navbar-height: 56px;
+  --breadcrumb-height: 42px;
 }
 
 /* ========================================
-   MAIN NAVIGATION
+   LEGACY COMPONENTS (To be refactored)
    ======================================== */
 
+/* Old main navigation - can be removed once layout is finalized */
 .main-nav {
   background: var(--primary-gradient);
   color: white;
   padding: 1rem 2rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
 }
 
 .main-nav h1 {
-  margin: 0 0 1rem 0;
+  margin: 0 0 1rem;
   font-size: 1.8rem;
 }
 
@@ -45,13 +47,13 @@
 }
 
 .main-nav a:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgb(255 255 255 / 20%);
   color: white;
 }
 
 .main-nav a.active {
-  background: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  background: rgb(255 255 255 / 30%);
+  box-shadow: 0 2px 4px rgb(0 0 0 / 20%);
 }
 
 /* ========================================
@@ -66,14 +68,14 @@
   border-radius: 8px;
   background: var(--primary-gradient);
   color: white;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgb(0 0 0 / 10%);
 }
 
 .counter-component h3 {
   margin-top: 0;
   font-size: 1.5rem;
   text-align: center;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 2px 2px 4px rgb(0 0 0 / 30%);
 }
 
 .counter-display {
@@ -89,17 +91,17 @@
 .counter-display strong {
   font-size: 3rem;
   color: #f39c12;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 2px 2px 4px rgb(0 0 0 / 30%);
 }
 
 .counter-info {
   margin-top: 2rem;
   padding-top: 1.5rem;
-  border-top: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid rgb(255 255 255 / 30%);
 }
 
 .counter-info p {
-  margin: 0 0 1rem 0;
+  margin: 0 0 1rem;
   font-weight: bold;
 }
 
@@ -125,14 +127,14 @@
 }
 
 .markdown-input {
-  font-family: 'Monaco', 'Courier New', monospace;
+  font-family: Monaco, 'Courier New', monospace;
   font-size: 0.95rem;
   resize: vertical;
 }
 
 .markdown-input:focus {
   border-color: #3498db;
-  box-shadow: 0 0 0 0.25rem rgba(52, 152, 219, 0.25);
+  box-shadow: 0 0 0 0.25rem rgb(52 152 219 / 25%);
 }
 
 .markdown-preview {
@@ -151,6 +153,6 @@
 }
 
 .markdown-preview code {
-  font-family: 'Monaco', 'Courier New', monospace;
+  font-family: Monaco, 'Courier New', monospace;
   font-size: 0.95rem;
 }

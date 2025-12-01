@@ -11,3 +11,7 @@
 /pnpm-lock.yaml
 ember-cli-update.json
 *.html
+
+# Temporarily ignore due to prettier-plugin-ember-template-tag bug
+app/components/sidebar-nav.gjs
+app/components/breadcrumb-nav.gjs
