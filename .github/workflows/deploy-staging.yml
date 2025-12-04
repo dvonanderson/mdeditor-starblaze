@@ -1,0 +1,75 @@
+name: Deploy Staging (Development Branch)
+
+on:
+  push:
+    branches:
+      - development
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment per branch
+concurrency:
+  group: "pages-staging-${{ github.ref }}"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build Staging
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build for staging (with base path)
+        run: npm run build:gh-pages
+        env:
+          # Build with /mdeditor-starblaze-staging/ base path
+          # This allows staging to deploy to a separate GitHub Pages site
+          VITE_BASE_PATH: /mdeditor-starblaze-staging/
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/
+
+  # NOTE: This deploy step is configured for GitHub Pages
+  # You have two options for staging:
+  #
+  # OPTION 1: Separate GitHub Pages site (Recommended)
+  # - Create a new repo: mdeditor-starblaze-staging
+  # - Enable GitHub Pages on that repo
+  # - Update this workflow to deploy to that repo
+  #
+  # OPTION 2: Use Netlify/Vercel for staging (Easier)
+  # - Replace this deploy job with Netlify/Vercel deployment
+  # - They provide automatic preview URLs for every push
+  #
+  # For now, this job is DISABLED - uncomment when you've chosen an option
+
+  # deploy:
+  #   name: Deploy to Staging
+  #   environment:
+  #     name: staging
+  #     url: ${{ steps.deployment.outputs.page_url }}
+  #   runs-on: ubuntu-latest
+  #   needs: build
+  #
+  #   steps:
+  #     - name: Deploy to GitHub Pages (Staging)
+  #       id: deployment
+  #       uses: actions/deploy-pages@v4
