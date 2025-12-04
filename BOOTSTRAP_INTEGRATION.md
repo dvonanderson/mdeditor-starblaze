@@ -9,6 +9,7 @@ npm install bootstrap @popperjs/core bootstrap-icons
 ```
 
 ### Dependencies:
+
 - **bootstrap** (v5.x) - The main Bootstrap CSS and JavaScript framework
 - **@popperjs/core** - Required for Bootstrap's JavaScript components (tooltips, popovers, dropdowns)
 - **bootstrap-icons** - Official Bootstrap icon font
@@ -31,6 +32,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 ### 2. Custom Styles in `app/styles/app.css`
 
 The custom CSS file now works alongside Bootstrap, providing:
+
 - Custom CSS variables for gradients
 - Component-specific overrides
 - Custom styling that complements Bootstrap
@@ -38,6 +40,7 @@ The custom CSS file now works alongside Bootstrap, providing:
 ## Bootstrap Components Used
 
 ### Navigation (`app/templates/application.gts`)
+
 - **Navbar** - Responsive navigation with hamburger menu
 - **Container-fluid** - Full-width container
 - **Navbar-toggler** - Mobile menu toggle
@@ -53,6 +56,7 @@ The custom CSS file now works alongside Bootstrap, providing:
 ```
 
 ### Markdown Editor Component (`app/components/markdown-editor.gjs`)
+
 - **Card** - Container with header, body, and footer
 - **Grid System** - Responsive 2-column layout (`row`, `col-md-6`)
 - **Form Controls** - Styled textarea (`form-control`)
@@ -73,6 +77,7 @@ The custom CSS file now works alongside Bootstrap, providing:
 ```
 
 ### Counter Component (`app/components/counter.gjs`)
+
 - **Button Group** - Grouped buttons (`btn-group`)
 - **Button Variants** - Different button styles (`btn-light`, `btn-warning`)
 - **Bootstrap Icons** - Icons in buttons
@@ -88,11 +93,13 @@ The custom CSS file now works alongside Bootstrap, providing:
 ## Bootstrap Utility Classes Used
 
 ### Spacing
+
 - `p-3`, `p-0` - Padding
 - `m-0`, `mb-3`, `mb-4` - Margins
 - `px-4`, `py-3` - Horizontal/Vertical padding
 
 ### Layout
+
 - `d-flex` - Flexbox display
 - `justify-content-between` - Space between items
 - `align-items-center` - Center items vertically
@@ -100,15 +107,18 @@ The custom CSS file now works alongside Bootstrap, providing:
 - `g-0` - Remove gutters
 
 ### Typography
+
 - `text-center` - Center text
 - `text-muted` - Muted text color
 - `text-primary` - Primary color text
 
 ### Borders & Shadows
+
 - `border-end` - Right border
 - `shadow-sm` - Small box shadow
 
 ### Colors
+
 - `bg-light` - Light background
 
 ## Bootstrap Icons
@@ -135,6 +145,7 @@ Bootstrap's responsive classes ensure the app works on all screen sizes:
 ## Customization
 
 ### Custom Gradients
+
 We maintain custom gradients via CSS variables:
 
 ```css
@@ -145,6 +156,7 @@ We maintain custom gradients via CSS variables:
 ```
 
 ### Overriding Bootstrap Styles
+
 Custom styles in `app.css` override Bootstrap defaults when needed:
 
 ```css
@@ -182,6 +194,7 @@ modal.show();
 ## Further Customization
 
 ### Add Custom Bootstrap Theme
+
 You can customize Bootstrap variables by creating a custom SCSS file:
 
 1. Create `app/styles/bootstrap-custom.scss`
@@ -189,7 +202,9 @@ You can customize Bootstrap variables by creating a custom SCSS file:
 3. Import Bootstrap SCSS
 
 ### Use More Components
+
 Explore Bootstrap's full component library:
+
 - Modals
 - Dropdowns
 - Tooltips

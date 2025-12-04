@@ -180,7 +180,7 @@ Runs on every push and pull request to `main`/`master`.
 ```yaml
 on:
   push:
-    branches: [main, master]
+    branches: [main]
   pull_request: {}
 ```
 
