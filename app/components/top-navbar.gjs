@@ -1,9 +1,8 @@
 import { LinkTo } from '@ember/routing';
+import ThemeToggle from './theme-toggle';
 
 <template>
-  <nav
-    class="top-navbar navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm"
-  >
+  <nav class="top-navbar navbar navbar-expand-lg border border-light">
     <div class="container-fluid">
       <div class="navbar-nav me-auto">
         <LinkTo @route="dashboard" class="nav-link">
@@ -24,7 +23,10 @@ import { LinkTo } from '@ember/routing';
         </LinkTo>
       </div>
 
-      <div class="navbar-nav">
+      <div class="navbar-nav align-items-center">
+        <div class="nav-item me-3">
+          <ThemeToggle />
+        </div>
         <LinkTo @route="settings" class="nav-link">
           <i class="bi bi-gear"></i>
           Settings

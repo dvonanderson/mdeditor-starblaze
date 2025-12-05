@@ -8,11 +8,14 @@ export default class BreadcrumbNavComponent extends Component {
   get breadcrumbs() {
     // Generate breadcrumbs based on current route
     const currentRouteName = this.router.currentRouteName;
+
+    // Handle index route redirect
+    if (currentRouteName === 'index') {
+      return [{ route: 'dashboard', label: 'Dashboard', isLast: true }];
+    }
+
     const segments = currentRouteName.split('.');
     const breadcrumbs = [];
-
-    // Always start with home
-    breadcrumbs.push({ route: 'index', label: 'Home' });
 
     // Build breadcrumbs from route segments
     let accumulatedRoute = '';
@@ -41,7 +44,7 @@ export default class BreadcrumbNavComponent extends Component {
   }
 
   <template>
-    <nav aria-label="breadcrumb" class="breadcrumb-nav bg-light border-bottom py-2 px-3">
+    <nav aria-label="breadcrumb" class="breadcrumb-nav py-2 px-3 border border-0">
       <ol class="breadcrumb mb-0">
         {{#each this.breadcrumbs as |crumb|}}
           {{#if crumb.isLast}}

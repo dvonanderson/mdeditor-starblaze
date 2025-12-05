@@ -10,10 +10,10 @@ export default class SidebarNavComponent extends Component {
   ];
 
   <template>
-    <aside class="sidebar-nav bg-dark border-end">
-      <div class="sidebar-header p-3 border-bottom">
+    <aside class="sidebar-nav border-right border-light">
+      <div class="sidebar-header p-3 border border-light">
         <LinkTo @route="index" class="text-decoration-none">
-          <h4 class="mb-0 text-secondary">
+          <h4 class="mb-0">
             md<i class="md-icon-mdeditor"></i>ditor
           </h4>
         </LinkTo>
