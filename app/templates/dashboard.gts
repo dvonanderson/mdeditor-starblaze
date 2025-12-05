@@ -1,5 +1,6 @@
 import type { TOC } from '@ember/component/template-only';
 import { pageTitle } from 'ember-page-title';
+import { LinkTo } from '@ember/routing';
 
 interface DashboardSignature {
   Args: {
@@ -11,97 +12,123 @@ interface DashboardSignature {
 <template>
   {{pageTitle "Dashboard"}}
 
-  <div class="container-fluid">
-    <div class="row mb-4">
-      <div class="col-12">
-        <h1 class="display-4">Dashboard</h1>
-        <p class="lead text-muted">Welcome to MDEditor Starblaze</p>
+  <div class="dashboard p-4">
+    <div class="row g-3">
+      {{! Records Card }}
+      <div class="col-12 col-sm-4">
+        <div class="card text-bg-primary text-center dashboard-card">
+          <div class="card-body">
+            <div class="row align-items-center">
+              <div class="col-3">
+                <i class="bi bi-file-earmark-text" style="font-size: 3rem;"></i>
+              </div>
+              <div class="col-9 text-end">
+                <div class="display-4 fw-bold">24</div>
+                <div>Records</div>
+              </div>
+            </div>
+          </div>
+          <LinkTo
+            @route="resources.metadata"
+            class="card-footer dashboard-card-footer"
+          >
+            <span class="float-start">View Records</span>
+            <span class="float-end"><i class="bi bi-arrow-right"></i></span>
+          </LinkTo>
+        </div>
+      </div>
+
+      {{! Contacts Card }}
+      <div class="col-12 col-sm-4">
+        <div class="card text-bg-success text-center dashboard-card">
+          <div class="card-body">
+            <div class="row align-items-center">
+              <div class="col-3">
+                <i class="bi bi-person-lines-fill" style="font-size: 3rem;"></i>
+              </div>
+              <div class="col-9 text-end">
+                <div class="display-4 fw-bold">12</div>
+                <div>Contacts</div>
+              </div>
+            </div>
+          </div>
+          <LinkTo
+            @route="resources.contacts"
+            class="card-footer dashboard-card-footer"
+          >
+            <span class="float-start">View Contacts</span>
+            <span class="float-end"><i class="bi bi-arrow-right"></i></span>
+          </LinkTo>
+        </div>
+      </div>
+
+      {{! Dictionaries Card }}
+      <div class="col-12 col-sm-4">
+        <div class="card text-bg-info text-center dashboard-card">
+          <div class="card-body">
+            <div class="row align-items-center">
+              <div class="col-3">
+                <i class="bi bi-book" style="font-size: 3rem;"></i>
+              </div>
+              <div class="col-9 text-end">
+                <div class="display-4 fw-bold">8</div>
+                <div>Dictionaries</div>
+              </div>
+            </div>
+          </div>
+          <LinkTo
+            @route="resources.dictionaries"
+            class="card-footer dashboard-card-footer"
+          >
+            <span class="float-start">View Dictionaries</span>
+            <span class="float-end"><i class="bi bi-arrow-right"></i></span>
+          </LinkTo>
+        </div>
       </div>
     </div>
 
-    <div class="row g-4">
-      <div class="col-md-3">
-        <div class="card border-primary">
-          <div class="card-body">
-            <h5 class="card-title">
-              <i class="bi bi-file-earmark-text text-primary"></i>
-              Metadata Records
-            </h5>
-            <p class="display-6 mb-0">24</p>
-            <small class="text-muted">Total records</small>
-          </div>
-        </div>
-      </div>
+    <hr class="my-4" />
 
-      <div class="col-md-3">
-        <div class="card border-success">
-          <div class="card-body">
-            <h5 class="card-title">
-              <i class="bi bi-person-lines-fill text-success"></i>
-              Contacts
-            </h5>
-            <p class="display-6 mb-0">12</p>
-            <small class="text-muted">Total contacts</small>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-3">
-        <div class="card border-info">
-          <div class="card-body">
-            <h5 class="card-title">
-              <i class="bi bi-book text-info"></i>
-              Dictionaries
-            </h5>
-            <p class="display-6 mb-0">8</p>
-            <small class="text-muted">Total dictionaries</small>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-3">
-        <div class="card border-warning">
-          <div class="card-body">
-            <h5 class="card-title">
-              <i class="bi bi-folder text-warning"></i>
-              Projects
-            </h5>
-            <p class="display-6 mb-0">5</p>
-            <small class="text-muted">Total projects</small>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="row mt-4">
-      <div class="col-12">
-        <div class="card">
-          <div class="card-header bg-primary text-white">
-            <h5 class="mb-0">Recent Activity</h5>
-          </div>
-          <div class="card-body">
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">
-                <i class="bi bi-file-earmark-plus text-success"></i>
-                <strong>New metadata record created:</strong>
-                "Climate Data 2024"
-                <small class="text-muted float-end">2 hours ago</small>
-              </li>
-              <li class="list-group-item">
-                <i class="bi bi-pencil text-primary"></i>
-                <strong>Metadata record updated:</strong>
-                "Soil Survey Dataset"
-                <small class="text-muted float-end">5 hours ago</small>
-              </li>
-              <li class="list-group-item">
-                <i class="bi bi-person-plus text-info"></i>
-                <strong>New contact added:</strong>
-                "Dr. Jane Smith"
-                <small class="text-muted float-end">1 day ago</small>
-              </li>
-            </ul>
-          </div>
-        </div>
+    <div class="row">
+      <div class="col-12 col-md-6 offset-md-3">
+        <h2 class="text-center mb-4">
+          <b><span class="dashboard-logo display-5">md<i
+                class="md-icon-mdeditor"
+              ></i>ditor</span></b>
+        </h2>
+        <p class="lead">
+          The mdEditor is a web application that allows users to author and edit
+          metadata for projects and datasets. The primary goal is to create an
+          editor that will allow creation and management of archival quality
+          metadata without requiring extensive knowledge of various metadata
+          standards.
+        </p>
+        <p class="lead">
+          The md<i class="md-icon-mdeditor"></i>ditor Version 1 has been
+          released!
+          <a
+            href="https://github.com/adiwg/mdEditor/projects"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Follow progress</a>
+          or
+          <a
+            href="https://github.com/adiwg/mdEditor/issues"
+            target="_blank"
+            rel="noopener noreferrer"
+          >report issues</a>
+          on
+          <a
+            href="https://github.com/adiwg/mdEditor"
+            target="_blank"
+            rel="noopener noreferrer"
+          >the Github website</a>. For more information, see
+          <a
+            href="https://www.mdeditor.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >mdeditor.org</a>.
+        </p>
       </div>
     </div>
   </div>

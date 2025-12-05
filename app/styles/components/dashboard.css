@@ -1,0 +1,57 @@
+/* ========================================
+   DASHBOARD STYLES
+   ======================================== */
+
+.dashboard {
+  /* No extra padding needed - handled by p-4 utility */
+}
+
+/* Dashboard Cards */
+.dashboard-card {
+  border: 0;
+  transition: transform 0.2s ease;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Card Footer Links */
+.dashboard-card-footer {
+  background-color: var(--dashboard-card-footer-bg);
+  color: var(--dashboard-card-footer-text);
+  text-decoration: none;
+  display: block;
+  padding: 0.75rem 1.25rem;
+  transition: background-color 0.3s ease-out;
+  border-top: 1px solid rgb(255 255 255 / 10%);
+}
+
+.dashboard-card-footer:hover {
+  background-color: var(--dashboard-card-footer-hover-bg);
+  color: var(--dashboard-card-footer-text);
+}
+
+/* Dashboard Logo */
+.dashboard-logo {
+  color: var(--text-secondary);
+}
+
+/* Links in dashboard content */
+.dashboard a {
+  color: var(--breadcrumb-link);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.dashboard a:hover {
+  color: var(--breadcrumb-link-hover);
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (width <= 575.98px) {
+  .dashboard-card .display-4 {
+    font-size: 2.5rem;
+  }
+}
