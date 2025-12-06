@@ -1,0 +1,150 @@
+/* ========================================
+   THEME VARIABLES - Light & Dark Mode
+   ======================================== */
+
+/* Light Theme (Default) */
+:root,
+[data-theme='light'] {
+  /* Background Colors */
+  --bg-primary: #fff;
+  --bg-secondary: #f8f9fa;
+  --bg-tertiary: #e9ecef;
+
+  /* Text Colors */
+  --text-primary: #212529;
+  --text-secondary: #6c757d;
+  --text-muted: #adb5bd;
+
+  /* Border Colors */
+  --border-color: #dee2e6;
+  --border-color-light: #e9ecef;
+
+  /* Sidebar Colors */
+  --sidebar-bg: #f8f9fa;
+  --sidebar-text: #495057;
+  --sidebar-text-hover: #667eea;
+  --sidebar-link-hover-bg: #e9ecef;
+  --sidebar-link-active-bg: #667eea;
+  --sidebar-link-active-text: #fff;
+  --sidebar-border: #dee2e6;
+
+  /* Navbar Colors */
+  --navbar-bg: #fff;
+  --navbar-text: #495057;
+  --navbar-text-hover: #667eea;
+  --navbar-border: #dee2e6;
+
+  /* Breadcrumb Colors */
+  --breadcrumb-bg: #f8f9fa;
+  --breadcrumb-text: rgb(85 85 85);
+  --breadcrumb-link: #667eea;
+  --breadcrumb-link-hover: #764ba2;
+  --breadcrumb-separator: #6c757d;
+  --breadcrumb-background: rgb(223 233 243);
+
+  /* Content Area */
+  --content-bg: #f8f9fa;
+
+  /* Card Colors */
+  --card-bg: #fff;
+  --card-border: #dee2e6;
+
+  /* Shadow */
+  --shadow-sm: 0 0.125rem 0.25rem rgb(0 0 0 / 7.5%);
+  --shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
+
+  /* Dashboard */
+  --dashboard-card-footer-bg: rgb(0 0 0 / 20%);
+  --dashboard-card-footer-hover-bg: rgb(0 0 0 / 30%);
+  --dashboard-card-footer-text: #fff;
+}
+
+/* Dark Theme */
+[data-theme='dark'] {
+  /* Background Colors */
+  --bg-primary: #1a1d23;
+  --bg-secondary: #23272f;
+  --bg-tertiary: #2d3139;
+
+  /* Text Colors */
+  --text-primary: #e9ecef;
+  --text-secondary: #adb5bd;
+  --text-muted: #6c757d;
+
+  /* Border Colors */
+  --border-color: #3d4149;
+  --border-color-light: #2d3139;
+
+  /* Sidebar Colors */
+  --sidebar-bg: #1a1d23;
+  --sidebar-text: #adb5bd;
+  --sidebar-text-hover: #8b9bea;
+  --sidebar-link-hover-bg: #2d3139;
+  --sidebar-link-active-bg: #667eea;
+  --sidebar-link-active-text: #fff;
+  --sidebar-border: #3d4149;
+
+  /* Navbar Colors */
+  --navbar-bg: #23272f;
+  --navbar-text: #adb5bd;
+  --navbar-text-hover: #8b9bea;
+  --navbar-border: #3d4149;
+
+  /* Breadcrumb Colors */
+  --breadcrumb-bg: #23272f;
+  --breadcrumb-text: #adb5bd;
+  --breadcrumb-link: #8b9bea;
+  --breadcrumb-link-hover: #a89dea;
+  --breadcrumb-separator: #6c757d;
+
+  /* Content Area */
+  --content-bg: #1a1d23;
+
+  /* Card Colors */
+  --card-bg: #23272f;
+  --card-border: #3d4149;
+
+  /* Shadow */
+  --shadow-sm: 0 0.125rem 0.25rem rgb(0 0 0 / 30%);
+  --shadow: 0 0.5rem 1rem rgb(0 0 0 / 50%);
+
+  /* Dashboard */
+  --dashboard-card-footer-bg: rgb(0 0 0 / 30%);
+  --dashboard-card-footer-hover-bg: rgb(0 0 0 / 50%);
+  --dashboard-card-footer-text: #fff;
+}
+
+/* ========================================
+   THEME TRANSITION
+   ======================================== */
+
+/* Smooth transition when switching themes */
+html,
+body,
+.sidebar-nav,
+.top-navbar,
+.breadcrumb-nav,
+.content-area,
+.card,
+.nav-link {
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* ========================================
+   THEME TOGGLE BUTTON
+   ======================================== */
+
+.theme-toggle {
+  transition: all 0.2s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.05);
+}
+
+.theme-toggle i {
+  font-size: 1.1rem;
+}

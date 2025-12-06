@@ -1,9 +1,17 @@
 name: Deploy Staging (Development Branch)
 
 on:
+  # Trigger on direct pushes to development (from merged PRs)
   push:
     branches:
       - development
+  # Also trigger on successful PR merges to development
+  pull_request:
+    types:
+      - closed
+    branches:
+      - development
+  # Allow manual triggering
   workflow_dispatch:
 
 permissions:
@@ -21,6 +29,11 @@ jobs:
     name: Build Staging
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    # Only run if PR was merged (not just closed) or if triggered by push/manual
+    if: |
+      github.event_name == 'push' ||
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'pull_request' && github.event.pull_request.merged == true)
 
     steps:
       - name: Checkout

@@ -6,18 +6,20 @@
   height: var(--top-navbar-height);
   flex-shrink: 0;
   z-index: 900;
+  background-color: var(--navbar-bg);
+  border-bottom: 1px solid var(--navbar-border);
 }
 
 .top-navbar .nav-link {
-  color: #495057;
+  color: var(--navbar-text);
   transition: all 0.2s ease;
 }
 
 .top-navbar .nav-link:hover {
-  color: #667eea;
+  color: var(--navbar-text-hover);
 }
 
 .top-navbar .nav-link.active {
-  color: #667eea;
+  color: var(--navbar-text-hover);
   font-weight: 600;
 }

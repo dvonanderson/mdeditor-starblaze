@@ -17,11 +17,15 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 // Import mdEditor custom font
 import './styles/mdeditor-font.css';
 
+// Import theme system (must come before component styles)
+import './styles/themes.css';
+
 // Import layout and component styles
 import './styles/layout.css';
 import './styles/components/sidebar-nav.css';
 import './styles/components/top-navbar.css';
 import './styles/components/breadcrumb-nav.css';
+import './styles/components/dashboard.css';
 
 if (macroCondition(isDevelopingApp())) {
   importSync('./deprecation-workflow');
