@@ -37,6 +37,11 @@
   color: var(--text-secondary);
 }
 
+/* Dashboard Card Icons */
+.dashboard-card-icon {
+  font-size: 3rem;
+}
+
 /* Links in dashboard content */
 .dashboard a {
   color: var(--breadcrumb-link);

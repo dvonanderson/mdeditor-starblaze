@@ -20,7 +20,7 @@ interface DashboardSignature {
           <div class="card-body">
             <div class="row align-items-center">
               <div class="col-3">
-                <i class="bi bi-file-earmark-text" style="font-size: 3rem;"></i>
+                <i class="bi bi-file-earmark-text dashboard-card-icon"></i>
               </div>
               <div class="col-9 text-end">
                 <div class="display-4 fw-bold">24</div>
@@ -44,7 +44,7 @@ interface DashboardSignature {
           <div class="card-body">
             <div class="row align-items-center">
               <div class="col-3">
-                <i class="bi bi-person-lines-fill" style="font-size: 3rem;"></i>
+                <i class="bi bi-person-lines-fill dashboard-card-icon"></i>
               </div>
               <div class="col-9 text-end">
                 <div class="display-4 fw-bold">12</div>
@@ -68,7 +68,7 @@ interface DashboardSignature {
           <div class="card-body">
             <div class="row align-items-center">
               <div class="col-3">
-                <i class="bi bi-book" style="font-size: 3rem;"></i>
+                <i class="bi bi-book dashboard-card-icon"></i>
               </div>
               <div class="col-9 text-end">
                 <div class="display-4 fw-bold">8</div>
