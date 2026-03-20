@@ -1,0 +1,39 @@
+{
+  "private": true,
+  "description": "Monorepo for MdEditor UIs and addons.",
+  "license": "",
+  "author": "ADIWG",
+  "scripts": {
+    "build": "pnpm build:ui:mdeditor",
+    "build:ui:mdeditor": "pnpm run --filter mdeditor build",
+    "lint": "concurrently \"pnpm:lint:*\" --names \"lint:\"",
+    "lint:addons-api": "pnpm run --filter api lint",
+    "lint:addons-core": "pnpm run --filter core lint",
+    "lint:ui-mdeditor": "pnpm run --filter mdeditor lint",
+    "test": "concurrently \"pnpm:test:*\" --names \"test:\"",
+    "test:addons-api": "pnpm run --filter api test",
+    "test:addons-core": "pnpm run --filter core test",
+    "test:ui-mdeditor": "pnpm run --filter mdeditor test",
+    "test-a11y": "concurrently \"pnpm:test-a11y:*\" --names \"test-a11y:\"",
+    "test-a11y:mdeditor": "pnpm run --filter mdeditor test-a11y",
+    "doc:toc": "doctoc README.md",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0",
+    "doctoc": "^2.2.0",
+    "ember-template-lint": "^6.0.0",
+    "git-cz": "^4.9.0",
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
+    "prettier-plugin-ember-template-tag": "^2.1.3"
+  },
+  "config": {
+    "commitizen": {
+      "path": "git-cz"
+    }
+  },
+  "engines": {
+    "node": "20.* || 22.*"
+  }
+}
