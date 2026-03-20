@@ -56,9 +56,6 @@ importers:
       ember-loading:
         specifier: ^2.0.0
         version: 2.0.0(@babel/core@7.29.0)
-      ember-template-imports:
-        specifier: ^4.3.0
-        version: 4.4.0
       ember-truth-helpers:
         specifier: ^4.0.3
         version: 4.0.3(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.29.0))(rsvp@4.8.5)(webpack@5.105.4))
@@ -138,6 +135,9 @@ importers:
       ember-source-channel-url:
         specifier: ^3.0.0
         version: 3.0.0
+      ember-template-imports:
+        specifier: ^4.3.0
+        version: 4.4.0
       ember-template-lint:
         specifier: ^6.1.0
         version: 6.1.0
@@ -207,6 +207,9 @@ importers:
       '@embroider/macros':
         specifier: ^1.18.0
         version: 1.20.1(@babel/core@7.29.0)
+      '@eslint/js':
+        specifier: ^9.18.0
+        version: 9.39.4
       '@glimmer/component':
         specifier: ^2.0.0
         version: 2.0.0
@@ -219,6 +222,9 @@ importers:
       concurrently:
         specifier: ^9.1.0
         version: 9.2.1
+      core:
+        specifier: workspace:*
+        version: link:../../addons/core
       doctoc:
         specifier: ^2.2.0
         version: 2.3.0
@@ -252,6 +258,9 @@ importers:
       ember-cli-dependency-checker:
         specifier: ^3.3.3
         version: 3.3.3(ember-cli@5.12.0(@types/node@25.5.0)(handlebars@4.7.8)(underscore@1.13.8))
+      ember-cli-deprecation-workflow:
+        specifier: ^3.3.0
+        version: 3.4.0(ember-source@5.12.0(@glimmer/component@2.0.0)(rsvp@4.8.5)(webpack@5.105.4))
       ember-cli-flash:
         specifier: ^6.0.0
         version: 6.1.0(@babel/core@7.29.0)(@embroider/macros@1.20.1(@babel/core@7.29.0))(ember-modifier@4.3.0(@babel/core@7.29.0))
@@ -355,10 +364,10 @@ importers:
         specifier: ^11.0.0
         version: 11.1.0(postcss@8.5.8)(stylelint@15.11.0(typescript@5.9.3))
       tracked-built-ins:
-        specifier: ^3.4.0
-        version: 3.4.0(@babel/core@7.29.0)
+        specifier: ^4.0.0
+        version: 4.1.0(@babel/core@7.29.0)
       webpack:
-        specifier: ^5.95.0
+        specifier: ^5.105.4
         version: 5.105.4
 
 packages:
@@ -6732,8 +6741,8 @@ packages:
   tr46@0.0.3:
     resolution: {integrity: sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==}
 
-  tracked-built-ins@3.4.0:
-    resolution: {integrity: sha512-aRwWQXC3VkY50oYxS7wKZiavkjf3uaN+UYUH30D5gxUqbxDN2LnNsfWyDfckmxHUGw4gJDH5lpRS0jX/tim0vw==}
+  tracked-built-ins@4.1.0:
+    resolution: {integrity: sha512-v1+jca3sD3LgbAFVsontSONTv7HsZll3yeUB00L6KPwLilFRrY77gvgptDe35fTalk9ea7mmrM2wABD56pTvuw==}
 
   traverse@0.6.11:
     resolution: {integrity: sha512-vxXDZg8/+p3gblxB6BhhG5yWVn1kGRlaL8O78UDXc3wRnPizB5g83dcvWV1jpDMIPnjZjOFuxlMmE82XJ4407w==}
@@ -10731,6 +10740,14 @@ snapshots:
       '@babel/core': 7.29.0
       ember-cli-babel: 8.3.1(@babel/core@7.29.0)
       ember-source: 5.12.0(@glimmer/component@1.1.2(@babel/core@7.29.0))(rsvp@4.8.5)(webpack@5.105.4)
+    transitivePeerDependencies:
+      - supports-color
+
+  ember-cli-deprecation-workflow@3.4.0(ember-source@5.12.0(@glimmer/component@2.0.0)(rsvp@4.8.5)(webpack@5.105.4)):
+    dependencies:
+      '@babel/core': 7.29.0
+      ember-cli-babel: 8.3.1(@babel/core@7.29.0)
+      ember-source: 5.12.0(@glimmer/component@2.0.0)(rsvp@4.8.5)(webpack@5.105.4)
     transitivePeerDependencies:
       - supports-color
 
@@ -15461,7 +15478,7 @@ snapshots:
 
   tr46@0.0.3: {}
 
-  tracked-built-ins@3.4.0(@babel/core@7.29.0):
+  tracked-built-ins@4.1.0(@babel/core@7.29.0):
     dependencies:
       '@embroider/addon-shim': 1.10.2
       decorator-transforms: 2.3.1(@babel/core@7.29.0)

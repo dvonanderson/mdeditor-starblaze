@@ -1,5 +1,9 @@
 'use strict';
 
+const APP_NAME = process.env.APP_NAME || 'MdEditor';
+const ENABLE_A11Y_AUDIT = process.env.ENABLE_A11Y_AUDIT || false;
+const COLOR_THEME = process.env.COLOR_THEME || 'light';
+
 module.exports = function (environment) {
   const ENV = {
     modulePrefix: 'mdeditor',
@@ -17,6 +21,13 @@ module.exports = function (environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    appName: APP_NAME,
+    companyName: 'ADIWG',
+
+    flashMessageDefaults: {
+      timeout: 4000,
     },
   };
 
@@ -38,6 +49,11 @@ module.exports = function (environment) {
 
     ENV.APP.rootElement = '#ember-testing';
     ENV.APP.autoboot = false;
+
+    ENV.flashMessageDefaults.timeout = 0;
+
+    ENV.ENABLE_A11Y_AUDIT = ENABLE_A11Y_AUDIT;
+    ENV.COLOR_THEME = COLOR_THEME;
   }
 
   if (environment === 'production') {
