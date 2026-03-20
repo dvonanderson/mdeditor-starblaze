@@ -1,0 +1,7 @@
+// Variable overrides must come before Bootstrap is imported.
+// Bootstrap 5 still uses @import internally, so we match that convention here.
+// Switch to @use once Bootstrap ships a module-system-compatible release.
+@import 'variables';
+
+// Full Bootstrap 5 SCSS — includePaths configured in addons/md/index.js
+@import 'bootstrap';
