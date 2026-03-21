@@ -1,5 +1,1 @@
-<template>
-  <span class="core-badge core-badge--{{@type}}">
-    {{@label}}
-  </span>
-</template>
+<template><span class='core-badge core-badge--{{@type}}'>{{@label}}</span></template>
