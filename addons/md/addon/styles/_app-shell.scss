@@ -1,0 +1,27 @@
+// Application shell: left sidebar (toggleable), top bar, main content, right sidebar.
+// Relies on Bootstrap utilities for colors, borders, and flex helpers.
+
+.md-app-shell {
+  min-height: 100vh;
+}
+
+.md-app-shell__body {
+  // Allow nested flex children to shrink so overflow-auto works on main.
+  min-height: 0;
+}
+
+.md-app-shell__sidebar {
+  flex-shrink: 0;
+}
+
+.md-app-shell__sidebar--left {
+  width: 16rem;
+}
+
+.md-app-shell__sidebar--right {
+  width: 14rem;
+}
+
+.md-app-shell__content {
+  min-height: 0;
+}

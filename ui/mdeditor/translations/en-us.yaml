@@ -3,3 +3,14 @@ notifications:
     error: error
     warning: warning
     info: info
+
+layout:
+    nav:
+        item: Item
+        link: Link
+    left_sidebar:
+        title: Left nav
+        nav_aria: Left sidebar links
+    right_sidebar:
+        title: Right nav
+        nav_aria: Right sidebar links

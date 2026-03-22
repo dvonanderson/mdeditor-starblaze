@@ -43,3 +43,5 @@ testem.log
 
 CLAUDE.md 
 .claude/*
+
+.pnpm-store/v3/
