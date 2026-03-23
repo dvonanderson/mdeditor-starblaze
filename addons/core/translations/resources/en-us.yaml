@@ -1,0 +1,20 @@
+dashboard:
+  title: Dashboard
+export:
+  title: Export
+import:
+  title: Import
+translate:
+  title: Translate
+help:
+  title: Help
+settings:
+  title: Settings
+  validation:
+    title: Validation
+  profile:
+    title: Profile
+    manage:
+      title: Manage
+  main:
+    title: Main

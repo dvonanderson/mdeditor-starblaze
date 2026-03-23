@@ -1,49 +1,50 @@
 <Md::AppShell
-    @leftSidebarOpen={{this.leftSidebarOpen}}
-    @onToggleLeft={{this.toggleLeft}}
+  @leftSidebarOpen={{this.leftSidebarOpen}}
+  @onToggleLeft={{this.toggleLeft}}
 >
-    <:navbar>
-        <ul class='navbar-nav me-auto'>
-            <li class='nav-item'>
-                <a class='nav-link' href='#'>{{t 'layout.nav.item'}}</a>
-            </li>
-            <li class='nav-item'>
-                <a class='nav-link' href='#'>{{t 'layout.nav.item'}}</a>
-            </li>
-        </ul>
-    </:navbar>
+  <:navbar>
+    <ul class='navbar-nav me-auto'>
+      <li class='nav-item'>
+        <a class='nav-link' href='#'>{{t 'layout.nav.item'}}</a>
+      </li>
+      <li class='nav-item'>
+        <a class='nav-link' href='#'>{{t 'layout.nav.item'}}</a>
+      </li>
+      <Md::Card />
+    </ul>
+  </:navbar>
 
-    <:left>
-        <div class='p-3'>
-            <p class='small text-body-secondary mb-2'>{{t
-                    'layout.left_sidebar.title'
-                }}</p>
-            <nav
-                aria-label={{t 'layout.left_sidebar.nav_aria'}}
-                class='nav flex-column'
-            >
-                <a class='nav-link py-1' href='#'>{{t 'layout.nav.link'}}</a>
-                <a class='nav-link py-1' href='#'>{{t 'layout.nav.link'}}</a>
-            </nav>
-        </div>
-    </:left>
+  <:left>
+    <div class='p-3'>
+      <p class='small text-body-secondary mb-2'>{{t
+          'layout.left_sidebar.title'
+        }}</p>
+      <nav
+        aria-label={{t 'layout.left_sidebar.nav_aria'}}
+        class='nav flex-column'
+      >
+        <a class='nav-link py-1' href='#'>{{t 'layout.nav.link'}}</a>
+        <a class='nav-link py-1' href='#'>{{t 'layout.nav.link'}}</a>
+      </nav>
+    </div>
+  </:left>
 
-    <:right>
-        <div class='p-3'>
-            <p class='small text-body-secondary mb-2'>{{t
-                    'layout.right_sidebar.title'
-                }}</p>
-            <nav
-                aria-label={{t 'layout.right_sidebar.nav_aria'}}
-                class='nav flex-column'
-            >
-                <a class='nav-link py-1' href='#'>{{t 'layout.nav.link'}}</a>
-                <a class='nav-link py-1' href='#'>{{t 'layout.nav.link'}}</a>
-            </nav>
-        </div>
-    </:right>
+  <:right>
+    <div class='p-3'>
+      <p class='small text-body-secondary mb-2'>{{t
+          'layout.right_sidebar.title'
+        }}</p>
+      <nav
+        aria-label={{t 'layout.right_sidebar.nav_aria'}}
+        class='nav flex-column'
+      >
+        <a class='nav-link py-1' href='#'>{{t 'layout.nav.link'}}</a>
+        <a class='nav-link py-1' href='#'>{{t 'layout.nav.link'}}</a>
+      </nav>
+    </div>
+  </:right>
 
-    <:default>
-        {{outlet}}
-    </:default>
+  <:default>
+    {{outlet}}
+  </:default>
 </Md::AppShell>

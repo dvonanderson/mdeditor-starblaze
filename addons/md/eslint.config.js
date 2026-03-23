@@ -3,7 +3,6 @@
 /* eslint-disable n/no-unpublished-require */
 const { defineConfig, globalIgnores } = require('eslint/config');
 const babelParser = require('@babel/eslint-parser');
-const emberEslintParser = require('ember-eslint-parser');
 const js = require('@eslint/js');
 const eslintPluginEmberRecommended = require('eslint-plugin-ember/configs/recommended');
 const nPlugin = require('eslint-plugin-n');
@@ -15,6 +14,8 @@ module.exports = defineConfig([
   js.configs.recommended,
   ...eslintPluginEmberRecommended,
   {
+    // .gjs / .gts use ember-eslint-parser from eslint-plugin-ember; do not override with Babel here.
+    files: ['**/*.{js,ts}'],
     languageOptions: {
       parser: babelParser,
       parserOptions: {
@@ -45,14 +46,6 @@ module.exports = defineConfig([
       'ember/no-computed-properties-in-native-classes': 'off',
       'ember/no-assignment-of-untracked-properties-used-in-tracking-contexts':
         'off',
-    },
-  },
-
-  // .gjs files — ember-eslint-parser (see eslint-plugin-ember GJS setup)
-  {
-    files: ['**/*.gjs'],
-    languageOptions: {
-      parser: emberEslintParser,
     },
   },
 

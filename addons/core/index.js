@@ -16,7 +16,10 @@ module.exports = {
 
     if (type === 'self') {
       const TemplateImportPreprocessor = require('ember-template-imports/src/preprocessor-plugin');
-      registry.add('js', new TemplateImportPreprocessor({ inline_source_map: true }));
+      registry.add(
+        'js',
+        new TemplateImportPreprocessor({ inline_source_map: true }),
+      );
     }
   },
 };

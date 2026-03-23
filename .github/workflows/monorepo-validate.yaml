@@ -1,9 +1,16 @@
 name: Validate Monorepo
-on: pull_request
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+# PRs: always validate. Push to main: only when the pusher matches vars.ALLOWED_MAIN_PUSHER
+# (set under Repo → Settings → Secrets and variables → Actions → Variables).
 jobs:
 
   dependencies:
     name: Install dependencies
+    if: github.event_name == 'pull_request' || (github.event_name == 'push' && github.actor == vars.ALLOWED_MAIN_PUSHER)
     runs-on: ${{ fromJSON(vars.RUNNER) }}
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
@@ -36,7 +43,7 @@ jobs:
 
   lint:
     name: Lint
-    needs: [dependencies, compliance]
+    needs: [dependencies]
     runs-on: ${{ fromJSON(vars.RUNNER) }}
     timeout-minutes: 5
     steps:
