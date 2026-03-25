@@ -3,7 +3,7 @@ import { faCircleQuestion, faPenToSquare } from '@fortawesome/free-solid-svg-ico
 import { LinkTo } from '@ember/routing';
 
 <template><div
-  class='md-sidebar-brand border-bottom border-end border-2 border-secondary px-3 py-3'
+  class='md-sidebar-brand border-bottom border-end border-2 border-secondary px-3'
 >
   <div class='md-sidebar-brand__identity'>
     <span class='md-sidebar-brand__md'>md</span>

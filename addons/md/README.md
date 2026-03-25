@@ -3,6 +3,10 @@
 This addon contains common styles and components shared by
 MdEditor UIs.
 
+**Public documentation (for the whole team, including non-developers):**  
+See the **MdEditor handbook** in **`docs/handbook`** (covers the monorepo and the md UI kit). From the monorepo root run `pnpm docs:dev` locally, or `pnpm docs:build` for static output.  
+Deployment to **GitHub Pages** is described in *Publishing the handbook* in that site and in `.github/workflows/deploy-handbook.yml`.
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
