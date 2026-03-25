@@ -1,0 +1,6 @@
+{
+  "name": "mdeditor-handbook",
+  "private": true,
+  "type": "module",
+  "description": "MdEditor monorepo handbook: Markdown source lives here; VitePress runs from the monorepo root (pnpm docs:*)."
+}

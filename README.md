@@ -15,20 +15,21 @@ subproject, e.g. running or testing.
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-- [Projects](#projects)
-  - [Core (addons/core):](#core-addonscore)
-  - [Md (addons/md)](#md-addonsmd)
-  - [MdEditor (ui/mdeditor)](#mdeditor-uimdeditor)
-- [Prerequisites](#prerequisites)
-- [Optional Tooling](#optional-tooling)
-- [Installation](#installation)
-- [Pnpm Commands](#pnpm-commands)
-- [Contributing](#contributing)
-  - [Branching](#branching)
-  - [Building ToC](#building-toc)
-  - [Building MdEditor UI for Production](#building-mdeditor-ui-for-production)
-    - [Building with a Container](#building-with-a-container)
-  - [Committing](#committing)
+- [MdEditor UI Monorepo](#mdeditor-ui-monorepo)
+  - [Projects](#projects)
+    - [Core (addons/core):](#core-addonscore)
+    - [Md (addons/md)](#md-addonsmd)
+    - [MdEditor (ui/mdeditor)](#mdeditor-uimdeditor)
+  - [Prerequisites](#prerequisites)
+  - [Optional Tooling](#optional-tooling)
+  - [Installation](#installation)
+  - [Pnpm Commands](#pnpm-commands)
+  - [Contributing](#contributing)
+    - [Branching](#branching)
+    - [Building ToC](#building-toc)
+    - [Building MdEditor UI for Production](#building-mdeditor-ui-for-production)
+      - [Building with a Container](#building-with-a-container)
+    - [Committing](#committing)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -72,7 +73,7 @@ that best suit you and your personal style.
 ## Installation
 
 * `git clone <repository-url>` this repository
-* `cd boundary-ui`
+* `cd mdeditor-starblaze`
 * `pnpm install`
 
 ## Pnpm Commands

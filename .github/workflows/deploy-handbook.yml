@@ -1,0 +1,44 @@
+name: Deploy handbook (GitHub Pages)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'docs/handbook/**'
+      - 'package.json'
+      - 'pnpm-lock.yaml'
+      - '.github/workflows/deploy-handbook.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pages-handbook
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: pnpm/action-setup@41ff72655975bd51cab0327fa583b6e92b6d3061 # v4.2.0
+        with:
+          run_install: false
+      - uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
+        with:
+          node-version: 20
+          cache: pnpm
+          cache-dependency-path: '**/pnpm-lock.yaml'
+      - run: pnpm install --frozen-lockfile
+      - name: Build VitePress site
+        env:
+          VITEPRESS_BASE: /${{ github.event.repository.name }}/
+        run: pnpm docs:build
+      - name: Publish to gh-pages branch
+        uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b2c983a00e18431b0bc7993cd5 # v4.0.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: docs/handbook/.vitepress/dist
+          force_orphan: true

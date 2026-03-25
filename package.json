@@ -17,6 +17,9 @@
     "test-a11y": "concurrently \"pnpm:test-a11y:*\" --names \"test-a11y:\"",
     "test-a11y:mdeditor": "pnpm run --filter mdeditor test-a11y",
     "doc:toc": "doctoc README.md",
+    "docs:dev": "vitepress dev docs/handbook",
+    "docs:build": "vitepress build docs/handbook",
+    "docs:preview": "vitepress preview docs/handbook",
     "prepare": "husky"
   },
   "devDependencies": {
@@ -26,7 +29,8 @@
     "git-cz": "^4.9.0",
     "husky": "^9.1.6",
     "lint-staged": "^15.2.10",
-    "prettier-plugin-ember-template-tag": "^2.1.3"
+    "prettier-plugin-ember-template-tag": "^2.1.3",
+    "vitepress": "^1.6.3"
   },
   "config": {
     "commitizen": {
