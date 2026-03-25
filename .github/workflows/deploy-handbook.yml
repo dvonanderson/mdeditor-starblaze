@@ -36,7 +36,7 @@ jobs:
           VITEPRESS_BASE: /${{ github.event.repository.name }}/
         run: pnpm docs:build
       - name: Publish to gh-pages branch
-        uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b2c983a00e18431b0bc7993cd5 # v4.0.0
+        uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e # v4.0.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages

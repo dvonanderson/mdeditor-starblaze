@@ -17,6 +17,8 @@
     "test-a11y": "concurrently \"pnpm:test-a11y:*\" --names \"test-a11y:\"",
     "test-a11y:mdeditor": "pnpm run --filter mdeditor test-a11y",
     "doc:toc": "doctoc README.md",
+    "compliance:licenses": "pnpm licenses list",
+    "compliance:audit": "pnpm audit --audit-level=moderate",
     "docs:dev": "vitepress dev docs/handbook",
     "docs:build": "vitepress build docs/handbook",
     "docs:preview": "vitepress preview docs/handbook",
