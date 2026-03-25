@@ -4,6 +4,14 @@ export:
   title: Export
 import:
   title: Import
+publish:
+  title: Publish
+sync:
+  title: Sync
+  list:
+    title: Sync list
+  import:
+    title: Sync import
 translate:
   title: Translate
 help:

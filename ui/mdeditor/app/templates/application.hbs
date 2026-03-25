@@ -1,31 +1,83 @@
 <Md::AppShell
   @leftSidebarOpen={{this.leftSidebarOpen}}
-  @onToggleLeft={{this.toggleLeft}}
+  @onCloseLeftSidebar={{this.closeLeftSidebar}}
+  @closeSidebarLabel={{t 'layout.nav.close_sidebar'}}
 >
-  <:navbar>
-    <ul class='navbar-nav me-auto'>
-      <li class='nav-item'>
-        <a class='nav-link' href='#'>{{t 'layout.nav.item'}}</a>
-      </li>
-      <li class='nav-item'>
-        <a class='nav-link' href='#'>{{t 'layout.nav.item'}}</a>
-      </li>
-      <Md::Card />
-    </ul>
-  </:navbar>
+  <:primary>
+    <Md::PrimaryNav
+      @onToggleLeft={{this.toggleLeft}}
+      @sidebarOpen={{this.leftSidebarOpen}}
+      @ariaLabel={{t 'layout.nav.primary_aria'}}
+      @toggleSidebarLabel={{t 'layout.nav.toggle_sidebar'}}
+      @dashboardLabel={{t 'resources.dashboard.title'}}
+      @exportLabel={{t 'resources.export.title'}}
+      @importLabel={{t 'resources.import.title'}}
+      @publishLabel={{t 'resources.publish.title'}}
+      @syncLabel={{t 'resources.sync.title'}}
+      @settingsLabel={{t 'layout.topbar.settings'}}
+    />
+  </:primary>
+  <:context>
+    <Md::ContextTitleBar @title={{t this.contextTitleKey}} />
+  </:context>
 
   <:left>
-    <div class='p-3'>
-      <p class='small text-body-secondary mb-2'>{{t
-          'layout.left_sidebar.title'
-        }}</p>
-      <nav
-        aria-label={{t 'layout.left_sidebar.nav_aria'}}
-        class='nav flex-column'
-      >
-        <a class='nav-link py-1' href='#'>{{t 'layout.nav.link'}}</a>
-        <a class='nav-link py-1' href='#'>{{t 'layout.nav.link'}}</a>
-      </nav>
+    <div class='md-app-shell__left-inner px-3 pb-3 pt-0'>
+      <Md::SidebarBrand
+        @version={{this.appVersion}}
+        @helpLabel={{t 'layout.topbar.help'}}
+      />
+      <Md::SidebarNav @ariaLabel={{t 'layout.left_sidebar.nav_aria'}}>
+        <Md::SidebarNavSection
+          @panelId='md-sidebar-metadata'
+          @title={{t 'layout.left_sidebar.section_metadata'}}
+          @defaultOpen={{true}}
+        >
+          <li>
+            <a href='#' class='md-sidebar-nav__link'>{{t
+                'layout.left_sidebar.sample_link'
+              }}</a>
+          </li>
+          <li>
+            <a href='#' class='md-sidebar-nav__link'>{{t 'layout.nav.link'}}</a>
+          </li>
+        </Md::SidebarNavSection>
+        <Md::SidebarNavSection
+          @panelId='md-sidebar-contacts'
+          @title={{t 'layout.left_sidebar.section_contacts'}}
+        >
+          <li>
+            <a href='#' class='md-sidebar-nav__link'>{{t
+                'layout.left_sidebar.sample_link'
+              }}</a>
+          </li>
+          <li>
+            <a href='#' class='md-sidebar-nav__link'>{{t 'layout.nav.link'}}</a>
+          </li>
+        </Md::SidebarNavSection>
+        <Md::SidebarNavSection
+          @panelId='md-sidebar-dictionaries'
+          @title={{t 'layout.left_sidebar.section_dictionaries'}}
+        >
+          <li>
+            <a href='#' class='md-sidebar-nav__link'>{{t
+                'layout.left_sidebar.sample_link'
+              }}</a>
+          </li>
+        </Md::SidebarNavSection>
+        <li
+          class='md-sidebar-nav__divider border-top my-3'
+          aria-hidden='true'
+        ></li>
+        <Md::SidebarNavSection
+          @panelId='md-sidebar-account'
+          @title={{t 'layout.left_sidebar.section_account'}}
+        >
+          <li>
+            <a href='#' class='md-sidebar-nav__link'>{{t 'layout.nav.link'}}</a>
+          </li>
+        </Md::SidebarNavSection>
+      </Md::SidebarNav>
     </div>
   </:left>
 

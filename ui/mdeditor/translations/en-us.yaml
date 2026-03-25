@@ -1,16 +1,27 @@
 notifications:
-    success: success
-    error: error
-    warning: warning
-    info: info
+  success: success
+  error: error
+  warning: warning
+  info: info
 
 layout:
-    nav:
-        item: Item
-        link: Link
-    left_sidebar:
-        title: Left nav
-        nav_aria: Left sidebar links
-    right_sidebar:
-        title: Right nav
-        nav_aria: Right sidebar links
+  nav:
+    item: Item
+    link: Link
+    primary_aria: Primary navigation
+    toggle_sidebar: Toggle left sidebar
+    close_sidebar: Close sidebar
+  topbar:
+    help: Help
+    settings: Settings
+  left_sidebar:
+    title: Left nav
+    nav_aria: Left sidebar links
+    sample_link: Overview
+    section_metadata: Metadata records
+    section_contacts: Contacts
+    section_dictionaries: Dictionaries
+    section_account: Account
+  right_sidebar:
+    title: Right nav
+    nav_aria: Right sidebar links

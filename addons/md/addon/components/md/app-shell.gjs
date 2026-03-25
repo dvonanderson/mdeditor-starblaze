@@ -1,48 +1,43 @@
 import { on } from '@ember/modifier';
 
-<template><div class='md-app-shell d-flex flex-column'>
-  <div class='md-app-shell__body d-flex flex-grow-1'>
-    {{#if @leftSidebarOpen}}
-      <aside
-        aria-label='Left sidebar'
-        class='md-app-shell__sidebar md-app-shell__sidebar--left border-end bg-body-tertiary overflow-auto'
-      >
-        {{yield to='left'}}
-      </aside>
-    {{/if}}
+<template><div class='md-app-shell d-flex flex-row min-vh-100'>
+  <aside
+    id='md-app-shell-left-sidebar'
+    aria-label='Left sidebar'
+    class='md-app-shell__sidebar md-app-shell__sidebar--left
+      {{if @leftSidebarOpen "md-app-shell__sidebar--left-open"}}'
+  >
+    {{yield to='left'}}
+  </aside>
 
-    <div class='d-flex flex-column flex-grow-1 min-w-0'>
-      <header class='md-app-shell__navbar border-bottom bg-body shadow-sm'>
-        <nav
-          aria-label='Primary'
-          class='navbar navbar-expand-md navbar-light py-2'
-        >
-          <div class='container-fluid gx-3'>
-            <button
-              type='button'
-              class='navbar-toggler me-2'
-              aria-label='Toggle left sidebar'
-              {{on 'click' @onToggleLeft}}
-            >
-              <span class='navbar-toggler-icon'></span>
-            </button>
-            <div class='navbar-collapse'>
-              {{yield to='navbar'}}
-            </div>
-          </div>
-        </nav>
-      </header>
+  {{#if @leftSidebarOpen}}
+    <button
+      type='button'
+      class='md-app-shell__sidebar-backdrop'
+      aria-label={{@closeSidebarLabel}}
+      {{on 'click' @onCloseLeftSidebar}}
+    ></button>
+  {{/if}}
 
+  <div
+    class='md-app-shell__main-column d-flex flex-column flex-grow-1 min-h-0 min-w-0'
+  >
+    <div class='md-app-shell__chrome flex-shrink-0'>
+      {{yield to='primary'}}
+      {{yield to='context'}}
+    </div>
+
+    <div class='md-app-shell__body d-flex flex-grow-1 min-h-0'>
       <main class='md-app-shell__content flex-grow-1 overflow-auto p-3'>
         {{yield}}
       </main>
-    </div>
 
-    <aside
-      aria-label='Right sidebar'
-      class='md-app-shell__sidebar md-app-shell__sidebar--right border-start bg-body-tertiary overflow-auto'
-    >
-      {{yield to='right'}}
-    </aside>
+      <aside
+        aria-label='Right sidebar'
+        class='md-app-shell__sidebar md-app-shell__sidebar--right border-start bg-body-tertiary overflow-auto'
+      >
+        {{yield to='right'}}
+      </aside>
+    </div>
   </div>
 </div></template>

@@ -14,6 +14,21 @@ module.exports = defineConfig([
   js.configs.recommended,
   ...eslintPluginEmberRecommended,
   {
+    files: ['**/*.{gjs,gts}'],
+    languageOptions: {
+      parserOptions: {
+        babelOptions: {
+          plugins: [
+            [
+              '@babel/plugin-proposal-decorators',
+              { decoratorsBeforeExport: true },
+            ],
+          ],
+        },
+      },
+    },
+  },
+  {
     // .gjs / .gts use ember-eslint-parser from eslint-plugin-ember; do not override with Babel here.
     files: ['**/*.{js,ts}'],
     languageOptions: {

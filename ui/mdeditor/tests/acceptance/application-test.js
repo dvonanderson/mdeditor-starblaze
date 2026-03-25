@@ -29,4 +29,9 @@ module('Acceptance | application', function (hooks) {
     await visit('/translate');
     assert.ok(document.title.includes('Translate'));
   });
+
+  test('publish route renders the correct page title', async function (assert) {
+    await visit('/publish');
+    assert.ok(document.title.includes('Publish'));
+  });
 });

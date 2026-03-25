@@ -1,10 +1,10 @@
 import Route from '@ember/routing/route';
 import { service } from '@ember/service';
 
-export default class ApplicationRoute extends Route {
-  @service intl;
+export default class IndexRoute extends Route {
+  @service router;
 
   beforeModel() {
-    this.intl.setLocale(['en-us']);
+    this.router.transitionTo('dashboard');
   }
 }

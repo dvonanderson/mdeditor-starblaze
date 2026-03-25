@@ -10,6 +10,7 @@ Router.map(function () {
   this.route('dashboard');
   this.route('export');
   this.route('import');
+  this.route('publish');
   this.route('translate');
   this.route('help');
   this.route('settings', function () {

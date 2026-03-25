@@ -1,21 +1,253 @@
-// Application shell: left sidebar (toggleable), top bar, main content, right sidebar.
-// Relies on Bootstrap utilities for colors, borders, and flex helpers.
+// Application shell: left rail full viewport height; chrome + main sit to the right.
 
 .md-app-shell {
   min-height: 100vh;
 }
 
+.md-app-shell__main-column {
+  min-width: 0;
+}
+
+.md-app-shell__chrome {
+  flex-shrink: 0;
+}
+
 .md-app-shell__body {
-  // Allow nested flex children to shrink so overflow-auto works on main.
   min-height: 0;
+  position: relative;
 }
 
 .md-app-shell__sidebar {
   flex-shrink: 0;
 }
 
+// Left: fixed ~300px on large screens; drawer + backdrop below `md` breakpoint.
+$md-left-sidebar-width: 18.75rem; // 300px
+$md-app-shell-breakpoint: 992px;
+
 .md-app-shell__sidebar--left {
-  width: 16rem;
+  background: #2c3e50;
+  border-color: rgba(255, 255, 255, 8%) !important;
+  color: #fff;
+  flex-shrink: 0;
+  overflow: auto;
+  width: $md-left-sidebar-width;
+
+  .nav-link {
+    color: rgba(255, 255, 255, 88%);
+
+    &:hover {
+      background: rgba(255, 255, 255, 8%);
+      color: #fff;
+    }
+  }
+}
+
+// Horizontal inset must match Bootstrap `px-3` on `.md-app-shell__left-inner` so full-bleed + nav list align.
+$md-left-inner-padding-x: 1rem;
+
+// Same horizontal inset as sidebar brand row (keep chrome strip alignment across the layout split).
+$md-chrome-row-padding-x: $md-left-inner-padding-x;
+
+// Same as `.md-primary-nav__inner` — keep sidebar brand row visually matched to that strip.
+$md-primary-nav-row-height: 3.125rem;
+
+// Shared rule under sidebar brand + primary nav (matches legacy mdEditor rail dividers).
+$md-chrome-row-border-bottom: 1px solid rgba(255, 255, 255, 12%);
+
+.md-app-shell__left-inner {
+  min-height: 0;
+}
+
+.md-app-shell__left-nav-heading {
+  color: rgba(255, 255, 255, 65%);
+}
+
+.md-sidebar-brand {
+  align-items: center;
+  border-bottom: $md-chrome-row-border-bottom;
+  box-sizing: border-box;
+  display: flex;
+  font-weight: 600;
+  justify-content: space-between;
+  letter-spacing: 0.02em;
+  margin-left: -$md-left-inner-padding-x;
+  margin-right: -$md-left-inner-padding-x;
+
+  // Match primary nav: inner row height + 1px bottom border on `.md-primary-nav`
+  min-height: calc(#{$md-primary-nav-row-height} + 1px);
+  padding: 0 $md-chrome-row-padding-x;
+  width: calc(100% + 2 * #{$md-left-inner-padding-x});
+}
+
+.md-sidebar-brand__identity {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.md-sidebar-brand__md {
+  color: #fff;
+}
+
+.md-sidebar-brand__icon {
+  color: var(--bs-primary);
+  font-size: 1.1rem;
+}
+
+.md-sidebar-brand__editor {
+  color: #fff;
+}
+
+.md-sidebar-brand__version {
+  color: #bdbdbd;
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  margin-left: 0.15rem;
+}
+
+.md-sidebar-brand__help {
+  color: #fff;
+  display: inline-flex;
+  flex-shrink: 0;
+  font-size: 1.1rem;
+  opacity: 0.95;
+  text-decoration: none;
+
+  &:hover {
+    color: #fff;
+    opacity: 1;
+  }
+}
+
+// Accordion-style left rail (Bootstrap collapse classes + Ember toggle; dark theme).
+.md-sidebar-nav {
+  margin-top: 0.75rem;
+}
+
+.md-sidebar-nav__toggle {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  border-radius: 0.25rem;
+  color: rgba(255, 255, 255, 88%);
+  cursor: pointer;
+  display: flex;
+  font-size: 0.95rem;
+  font-weight: 600;
+  gap: 0.35rem;
+  padding: 0.35rem 0.5rem;
+  text-align: left;
+  width: 100%;
+
+  &:hover {
+    background: rgba(255, 255, 255, 8%);
+    color: #fff;
+  }
+}
+
+.md-sidebar-nav__toggle-label {
+  flex: 1;
+  line-height: 1.25;
+  min-width: 0;
+}
+
+.md-sidebar-nav__chevron {
+  flex-shrink: 0;
+  font-size: 0.65rem;
+  opacity: 0.85;
+  transition: transform 0.15s ease;
+}
+
+.md-sidebar-nav__chevron--open {
+  transform: rotate(90deg);
+}
+
+.md-sidebar-nav__sublinks {
+  padding: 0.125rem 0 0.25rem 1.35rem;
+}
+
+.md-sidebar-nav__sublinks > li {
+  margin: 0;
+}
+
+.md-sidebar-nav__link {
+  border-radius: 0.25rem;
+  color: rgba(255, 255, 255, 75%);
+  display: block;
+  font-size: 0.875rem;
+  padding: 0.3rem 0.5rem;
+  text-decoration: none;
+
+  &:hover {
+    background: rgba(255, 255, 255, 8%);
+    color: #fff;
+  }
+}
+
+.md-sidebar-nav__divider {
+  border-color: rgba(255, 255, 255, 12%);
+  list-style: none;
+  margin-inline: 0;
+  padding: 0;
+}
+
+.md-app-shell__sidebar-backdrop {
+  background: rgba(0, 0, 0, 45%);
+  border: none;
+  cursor: pointer;
+  display: none;
+  inset: 0;
+  padding: 0;
+  position: fixed;
+  z-index: 1040;
+}
+
+@media (max-width: ($md-app-shell-breakpoint - 0.02px)) {
+  // Fixed drawer: out-of-flow so the main column keeps full width (see flexbox + fixed rules).
+  .md-app-shell__sidebar--left {
+    bottom: 0;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 25%);
+    left: 0;
+    max-width: min(#{$md-left-sidebar-width}, 88vw);
+    position: fixed;
+    top: 0;
+    transition: transform 0.2s ease;
+    z-index: 1050;
+  }
+
+  .md-app-shell__sidebar--left:not(.md-app-shell__sidebar--left-open) {
+    pointer-events: none;
+    transform: translateX(-100%);
+  }
+
+  .md-app-shell__sidebar-backdrop {
+    display: block;
+  }
+}
+
+@media (min-width: $md-app-shell-breakpoint) {
+  .md-app-shell__sidebar--left {
+    align-self: stretch;
+    flex: 0 0 auto;
+    height: auto;
+    min-width: $md-left-sidebar-width;
+    overflow: auto;
+    position: relative;
+    transform: none !important;
+    width: $md-left-sidebar-width;
+  }
+
+  .md-app-shell__sidebar-backdrop {
+    display: none !important;
+  }
+
+  .md-primary-nav__menu-toggle {
+    display: none !important;
+  }
 }
 
 .md-app-shell__sidebar--right {
@@ -24,4 +256,114 @@
 
 .md-app-shell__content {
   min-height: 0;
+}
+
+// --- Primary navigation (dark gray)
+$md-primary-nav-bg: #424242;
+$md-context-bar-bg: #f5f5f5;
+
+.md-primary-nav {
+  background: $md-primary-nav-bg;
+  border-bottom: $md-chrome-row-border-bottom;
+}
+
+.md-primary-nav__inner {
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
+  min-height: $md-primary-nav-row-height;
+  padding: 0 $md-chrome-row-padding-x;
+}
+
+.md-primary-nav__end {
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.md-primary-nav__menu-toggle {
+  align-items: center;
+  background: #333;
+  border: 1px solid #555;
+  border-radius: 0.25rem;
+  color: #fff;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 3px;
+  justify-content: center;
+  padding: 0.4rem;
+
+  // Shown only below `md` breakpoint (see media query above).
+  display: none;
+}
+
+@media (max-width: ($md-app-shell-breakpoint - 0.02px)) {
+  .md-primary-nav__menu-toggle {
+    display: inline-flex;
+  }
+}
+
+.md-primary-nav__menu-bar {
+  background: #fff;
+  border-radius: 1px;
+  height: 2px;
+  width: 1rem;
+}
+
+.md-primary-nav__list {
+  align-items: stretch;
+  display: flex;
+  flex: 1 1 auto;
+  flex-wrap: wrap;
+  gap: 0;
+  list-style: none;
+  margin: 0;
+  min-width: 0;
+  padding: 0;
+}
+
+.md-primary-nav__item {
+  margin: 0;
+}
+
+.md-primary-nav__link {
+  align-items: center;
+  color: #fff;
+  display: inline-flex;
+  gap: 0.35rem;
+  height: 100%;
+  padding: 0.65rem 0.85rem;
+  text-decoration: none;
+  white-space: nowrap;
+
+  &:hover {
+    background: rgba(255, 255, 255, 8%);
+    color: #fff;
+  }
+
+  &.active {
+    color: #fd7e14;
+
+    .md-primary-nav__icon {
+      color: #fd7e14;
+    }
+  }
+}
+
+.md-primary-nav__icon {
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+// --- Context / title bar (light)
+.md-context-title-bar {
+  background: $md-context-bar-bg;
+  border-bottom: 1px solid #e0e0e0;
+  min-height: 1.875rem;
+  padding: 0.35rem 0.75rem;
+}
+
+.md-context-title-bar__text {
+  color: #212121;
+  font-size: 0.95rem;
+  font-weight: 500;
 }
